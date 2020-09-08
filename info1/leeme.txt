@@ -1,3 +1,0 @@
-Ejemplos de archivos de programacion en C.
-Recopilados de libros,internet,programados por docentes,y/o alumnos.
-Favor de agregar ejemplos siempre compilados y funcionales.
