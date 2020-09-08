@@ -1,4 +1,1 @@
-UTN
-===
-
-C ejemplos básicos.
+Codigos de Ejemplo del Lenguaje C y su sintaxis.
