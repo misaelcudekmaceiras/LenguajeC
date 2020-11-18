@@ -1,0 +1,10 @@
+Para compilar:
+
+  gcc -c miprog.c
+  gcc -o miprog miprog.o
+
+Después:
+
+  ./miprog <argumento>
+
+Recordar editar la ruta al archivo que va a ser ejecutado (si es que no lo ponen en el mismo directorio).

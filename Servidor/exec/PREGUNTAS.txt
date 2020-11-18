@@ -1,0 +1,14 @@
+- Si se quiere llamar a un programa que lista todos los argumentos que recibe del usuario, ¿Qué función de la familia de exec() deberíamos usar?
+  Rta: execv() debido a que pasamos un el array argv sin limitaciones en la cantidad de argumentos.
+
+- Si ejecuto execv() sin antes realizar un fork(), ¿Cual va a ser el PID del archivo que ejecutamos? 
+  Rta: El PID del proceso del ejecutable padre.
+
+- ¿Que función deberíamos utilizar si queremos ejecutar el programa "ls" con el argumento "-las" únicamente?
+  Rta: execlp() por que limita la cantidad de parámetros y utiliza las variables de entorno para ejecutar el comando.
+
+- ¿Se puede colocar un printf() después de realizar un exec()?
+  Rta: Si, pero solo si queremos utilizarlo para mostrar un mensaje de error que es la única razón por la cual exec() vuelve a ejecutar el código "hijo".
+
+- Si dijimos que exec() no regresa a ejecutar el resto del código (si el archivo se ejecutó satisfactoriamente), ¿Cómo podemos ejecutar código cuando el hijo finalice su ejecución?
+  Rta: Utilizamos la función waitpid() para guardar el estado del proceso hijo.
