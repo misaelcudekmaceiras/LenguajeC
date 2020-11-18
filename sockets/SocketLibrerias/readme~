@@ -1,0 +1,30 @@
+Streams.
+- Sockets.
+Objetivos:
+* Manejar conexiones de red mediante las mismas funciones de lectura y escritura que utilizamos para acceder a archivos.
+* Ocultar los detalles de implementación de un par de conexiones que requieren un coocimiento detallado de la interfaz de sockets de TCP IP. no es el objetivo de Info I describir esos conceptos, sino utilizar la interfaz de sockets como una aplicación mas de streams.
+
+Archivos:
+* server.c: Programa servidor que crea una interfaz para escuchar pedidos de conexión. Una vez que es contactado por un cliente remoto le envía un string.
+* client.c: Programa cliente que conecta al servidor anterior y lee la string que aquel le envía. Luego finaliza.
+* sock-lib.h: Archivo header de la librería que provee las funciones de conexión a los programas cliente y servidor.
+* sock-lib-c: Archivo fuente de la libraría que provee las funciones de conexión a los programas cliente y servidor.
+
+Para compilar:
+
+librería estática
+ gcc -c -o sock-lib.o sock-lib.c -g -Wall
+ ar rcs libsock.a sock-lib.o
+
+Librería shared
+ gcc -c -fPIC -g -Wall sock-lib.c -o sock-libs.o
+ gcc -shared -Wl,-soname,libsock.so.1 -o libsock.so.1.0.1 sock-libs.o -lc
+ sudo ldconfig -n
+ sudo ln -sf libsock.so.1.0.1 libsock.so.1
+ ln -sf libsock.so.1 libsock.so
+
+server
+gcc -o servers server.c -Wall -g -lsock -L.
+
+client
+gcc -o clientes client.c -Wall -g -lsock -L.

@@ -1,20 +1,26 @@
 #include <stdio.h>
 
+struct Informacion {
+  char iNombre[ 15 ];
+  int iPrecio;
+};
 
 int main(){
   // Puntero de tipo FILE (Archivo)
   FILE *aFile;
   
-  int num=0x2A3F88;
-  char cara='G';
-  float pi=3.14;
+  // Creamos la info con diferentes tipos de variables
+  struct Informacion bebida = { "Bebida - $", 15 };
+  struct Informacion comida = { "Comida - $", 25 };
   
+  // Creamos el archivo o lo leemos de estar creado con fopen en modo binario
   aFile = fopen("informacion.dat", "wb");
-
-  fwrite(&num, sizeof(num), 1, aFile);
-  fwrite(&cara, sizeof(char), 1, aFile);
-  fwrite(&pi, sizeof(float), 1, aFile);
   
+  // Lo escribimos dentro del archivo con fwrite.
+  fwrite(&bebida, sizeof(struct Informacion), 1, aFile);
+  fwrite(&comida, sizeof(struct Informacion), 1, aFile);
+  
+  // Cerramos el archivo que usamos para ingresar los datos
   fclose(aFile);
   
   return 0;

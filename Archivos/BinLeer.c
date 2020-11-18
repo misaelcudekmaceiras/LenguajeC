@@ -1,13 +1,16 @@
 #include <stdio.h>
 
+struct Informacion {
+  char iNombre[ 15 ];
+  int iPrecio;
+};
 
 int main(){
-    FILE *aFile;
+  // Puntero de tipo FILE (Archivo)
+  FILE *aFile;
   
-    int num=0;;
-  char cara='_';
-  float pi=0;
-  
+  // Creamos la info con diferentes tipos de variables
+  struct Informacion info = { "", 0 };
   
   // Abrimos el archivo en modo lectura y binario
   aFile = fopen("informacion.dat", "rb");
@@ -16,20 +19,19 @@ int main(){
     // En caso de no existir, le devolvemos el error
     printf("El archivo no existe");
   } else {
-  
+    // Imprimimos lo que hay dentro del archivo
+    printf("Información:\n");
       
     // Recorremos el archivo e imprimimos lo que hay dentro
-  
+    while (feof(aFile) == 0) {
       // El fread recorre lo que está en la linea en la que se encuentra
       // el puntero y lo guarda en la variable info
-        fread(&num, sizeof(int), 1, aFile );
-        printf("int %x\n", num);
-  
-        fread(&cara, sizeof(char), 1, aFile );
-        printf("char %c\n", cara);
-        
-        fread(&pi, sizeof(float), 1, aFile );
-        printf("float %f\n", pi);
+      fread(&info, sizeof(struct Informacion), 1, aFile );
+      
+      // Para que no se mande el mensaje cuando la estructura llega al EOF
+      if(feof(aFile) == 0)
+		printf("%s%d\n", info.iNombre, info.iPrecio);
+    }
     
     fclose(aFile);
   }
