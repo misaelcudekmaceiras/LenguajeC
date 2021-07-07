@@ -1,6 +1,6 @@
 /*
 //Muestra todo lo ingresado por linea de comandos
-//Info1 Mariano Gonzales _ Misael Cudek
+//Info1 Mariano Gonzalez _ Misael Cudek
 */
 #include<stdio.h>
 
