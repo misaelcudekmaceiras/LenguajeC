@@ -1,0 +1,73 @@
+#include<stdio.h>
+
+
+  struct persona{
+    
+    char nombre[10];
+    char sexo[1];
+    int edad;
+    char telefono[10];
+    int * p;
+  };
+  
+void llenarnombre(struct persona *);  
+void llenaredad(struct persona *);
+void llenarsexo(struct persona *);
+void llenartelefono(struct persona *);
+
+int main (void){
+  
+int ivalor=0;
+
+
+struct persona yo;
+  
+  
+llenarnombre(&yo);
+llenaredad(&yo);
+llenarsexo(&yo);
+llenartelefono(&yo);
+
+
+
+
+printf("\n\n\nImpresion de valores\n\n\n");
+
+printf("El nombre es %s \n",yo.nombre);
+printf("El nombre es %d \n",yo.edad);
+printf("El nombre es %s \n",yo.sexo);
+printf("El nombre es %s \n",yo.telefono);  
+  return 0;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////Despues del main van las funciones////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void llenarnombre (struct persona * p_persona){
+  
+  printf("Ingrese un nombre\n");
+scanf("%s",p_persona->nombre);
+  
+}
+
+
+void llenaredad (struct persona * p_persona){
+  
+  printf("Ingrese la edad\n");
+scanf("%d",&(p_persona->edad));
+  
+}
+void llenarsexo (struct persona * p_persona){
+  
+  printf("Ingrese el sexo\n");
+scanf("%s",p_persona->sexo);
+  
+}
+void llenartelefono (struct persona * p_persona){
+  
+  printf("Ingrese el telefono\n");
+scanf("%s",p_persona->telefono);
+  
+}
+
+
