@@ -4,7 +4,7 @@ int funcion(int n);
 
 int main ()
 {
-     printf("%d\n",funcion(4)); 
+     printf("%d\n",funcion(5)); 
 
 }
 
@@ -14,13 +14,18 @@ int funcion(int n)
     int factorial=0;
     if(n==0)
     {
-        for(int x=i;x>=0;x--)
+        for(int x=i;x>0;x--)
         {
         printf("\t");    
         }
         
         i--;
-        printf("Saliendo %d \n",n);
+        printf("Entrando %d \n",n);
+        for(int x=i;x>0;x--)
+        {
+        printf("\t");    
+        }
+        printf("\tSaliendo 1 \n");
         return(1);
     }else
     {
