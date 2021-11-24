@@ -12,7 +12,7 @@
  
 //FILTRADO DE COMUNICACIONES SALIENTES AL PUERTO 8888
 //sudo iptables -A OUTPUT -p tcp --dport 8888  -j DROP
-
+///usr/include/netinet/in.h
  
 int main(int argc , char *argv[])
 {
