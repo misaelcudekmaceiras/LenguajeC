@@ -66,9 +66,12 @@ void liberarLista(struct nodo ** pinicial)
     psiguiente=pactual->psig;
     free(pactual->pdato);
     free(pactual);
-    (*pinicial)=0;
+    
     pactual=psiguiente;
+    
     }
+   
+   (*pinicial)=0;//fixed 26/11/2021
     
 }
 
