@@ -1,8 +1,9 @@
+#!/bin/bash
 #esto es un comentario de una linea
 #para que sea ejecutable a un archivo de texto   chmod 777 archivo
 
 gcc -c main.c f1.c f2.c f3.c
 gcc -o funciones_en_varios_archivos main.o f1.o f2.o f3.o 
 
-#rm f1.o f2.o f3.o main.o
+rm f1.o f2.o f3.o main.o
 #para que se eliminen los objetos ya utilizados decompilar la linea anterior

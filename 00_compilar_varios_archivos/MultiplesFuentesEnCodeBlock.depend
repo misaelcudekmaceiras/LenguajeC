@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1534361288 source:/home/misa/Documentos/Clases/UPEzeiza/Clases/00_compilar_varios_archivos/f1.c
+	"misheaders.h"
+
+1637935570 /home/misa/Documentos/Clases/UPEzeiza/Clases/00_compilar_varios_archivos/misheaders.h
+	<stdio.h>
+
+1534361288 source:/home/misa/Documentos/Clases/UPEzeiza/Clases/00_compilar_varios_archivos/f2.c
+	"misheaders.h"
+
+1534361288 source:/home/misa/Documentos/Clases/UPEzeiza/Clases/00_compilar_varios_archivos/f3.c
+	"misheaders.h"
+
+1534361286 source:/home/misa/Documentos/Clases/UPEzeiza/Clases/00_compilar_varios_archivos/main.c
+	"misheaders.h"
+
