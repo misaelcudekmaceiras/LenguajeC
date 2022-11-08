@@ -1,0 +1,4 @@
+Threads en heap
+join
+detach
+retorno de valores de un thread via join.
