@@ -1,0 +1,1 @@
+sysctl --all | grep  ipv4.tcp

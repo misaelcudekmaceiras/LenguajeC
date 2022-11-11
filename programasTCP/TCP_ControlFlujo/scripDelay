@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "simulating slowdown infrstructure on interface $1 to IP:$2 for port:$3";
+tc qdisc del dev $1 root
+tc qdisc add dev $1 handle 1: root htb
+tc class add dev $1 parent 1: classid 1:15 htb rate 1000Mbps
+tc qdisc add dev $1 parent 1:15 handle 11 netem delay 9000ms 
+tc filter add dev $1 parent 1:0 prio 1 protocol ip handle 11 fw flowid 1:15
+iptables -A OUTPUT -t mangle    -p tcp --dport $3 -j MARK --set-mark 11
