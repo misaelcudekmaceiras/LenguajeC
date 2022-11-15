@@ -1,0 +1,9 @@
+#!/bin/bash
+contador=0
+termina=10
+while [ $termina -ge $contador ]
+do
+  echo $contador
+  let contador=$contador+1
+  nc -N 127.0.0.1 8888 < /dev/null &
+done
